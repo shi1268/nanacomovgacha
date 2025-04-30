@@ -1,56 +1,92 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>YouTubeガチャ</title>
   <style>
+    /* 全体の背景・フォント */
     body {
-      background-color: #d6f5d6;
-      font-family: 'Arial', sans-serif;
+      background: linear-gradient(145deg, #d6f5d6, #f0fff0);
+      font-family: 'Rounded Mplus 1c', 'Segoe UI', sans-serif;
       text-align: center;
       padding: 40px;
-      color: #333;
+      color: #444;
     }
 
+    /* 見出し */
     h1 {
-      color: #4caf50;
+      color: #66bb6a;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
     }
 
+    /* ボタン */
+    #gachaButton {
+      background-color: #b2f2bb;
+      border: none;
+      color: #2e7d32;
+      padding: 15px 40px;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 25px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #gachaButton:hover {
+      background-color: #a5d6a7;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    }
+
+    #gachaButton::after {
+      content: "✨";
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      opacity: 0.8;
+    }
+
+    /* YouTube埋め込み */
     #videoFrame {
       width: 100%;
       max-width: 560px;
       height: 315px;
       border: none;
-      margin: 20px auto;
+      margin: 30px auto;
       display: block;
-      background-color: #ffffff;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 20px;
+      background-color: #fff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
     }
 
-    #gachaButton {
-      background-color: #a8e6a3;
-      border: none;
-      color: #2e7d32;
-      padding: 15px 30px;
-      font-size: 20px;
-      cursor: pointer;
-      border-radius: 8px;
-      transition: background-color 0.3s;
+    #videoFrame:hover {
+      transform: scale(1.02);
     }
 
-    #gachaButton:hover {
-      background-color: #81c784;
+    /* フッターなど */
+    footer {
+      margin-top: 40px;
+      color: #888;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
-  <h1>🎲 YouTubeガチャ 🎲</h1>
+  <h1>🎲 YouTubeガチャ 🎀</h1>
   <button id="gachaButton">動画を引く！</button>
   <iframe id="videoFrame" src="" allowfullscreen></iframe>
+  <footer>© 2025 ガチャチャンネル</footer>
 
   <script>
-    // チャンネル内の動画IDリストをここに追加してください
     const videoIds = [
       'dQw4w9WgXcQ',
       'kJQP7kiw5Fk',
