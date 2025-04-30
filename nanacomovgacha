@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTubeガチャ</title>
+  <style>
+    body {
+      background-color: #d6f5d6;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 40px;
+      color: #333;
+    }
+
+    h1 {
+      color: #4caf50;
+    }
+
+    #videoFrame {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      border: none;
+      margin: 20px auto;
+      display: block;
+      background-color: #ffffff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    #gachaButton {
+      background-color: #a8e6a3;
+      border: none;
+      color: #2e7d32;
+      padding: 15px 30px;
+      font-size: 20px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    #gachaButton:hover {
+      background-color: #81c784;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎲 YouTubeガチャ 🎲</h1>
+  <button id="gachaButton">動画を引く！</button>
+  <iframe id="videoFrame" src="" allowfullscreen></iframe>
+
+  <script>
+    // チャンネル内の動画IDリストをここに追加してください
+    const videoIds = [
+      'dQw4w9WgXcQ',
+      'kJQP7kiw5Fk',
+      'M7FIvfx5J10',
+      '3JZ_D3ELwOQ',
+      'eY52Zsg-KVI'
+    ];
+
+    const gachaButton = document.getElementById('gachaButton');
+    const videoFrame = document.getElementById('videoFrame');
+
+    gachaButton.addEventListener('click', () => {
+      const randomIndex = Math.floor(Math.random() * videoIds.length);
+      const videoId = videoIds[randomIndex];
+      videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    });
+  </script>
+</body>
+</html>
